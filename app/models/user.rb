@@ -7,4 +7,10 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :therapy_groups, through: :reviews
 
-    end
+  validates :email, uniqueness: true
+  validates :email, presence: true
+  validates :username, uniqueness: true
+  validates :username, presence: true
+  validates :password, presence: true
+
+end
