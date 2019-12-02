@@ -1,0 +1,14 @@
+  
+<% if @therapy_group %>
+    <h1> View all the reviews for  <%= @therapy_group.name %>!</h1>
+<% else %>
+    <h1> View all the reviews</h1>
+<% end %>
+
+<% @reviews.each do |r| %>
+    <h2> <%= r.therapy_group.name %></h2>
+    <h2> <%= r.therapy_group.location %></h2>
+    <h2> <%= r.therapy_group.duration %></h2>
+    <h2> <%= r.title %> - <%= r.stars %> </h2>
+    <p> <%= r.content %> </p>
+<% end %>
