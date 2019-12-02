@@ -1,0 +1,10 @@
+<h1>Therapy Group Ratings</h1>
+
+<% @therapy_groups.each do |t| %>
+    <h2><%= t.name %> - <%= t.location %> - <%= t.duration %> </h2>
+    <% t.reviews.each do |r| %>
+        <h4><%= r.title %> - <%= r.stars %> </h4>
+        <p><%= r.content%></p>
+    <% end %>
+    <%= link_to "Review this Therapy Group", new_therapy_group_review_path(t)%>
+<% end %>

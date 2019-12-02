@@ -1,0 +1,7 @@
+  
+<h1>Therapy Groups</h1>
+
+<% @therapy_groups.each do |b| %>
+    <h2> <%= b.name %> - <%= b.location %> <%= b.duration %>  </h2>
+    <p><%=b.description%></p>
+<% end %>
