@@ -1,0 +1,2 @@
+class TherapySpecialty < ApplicationRecord
+end

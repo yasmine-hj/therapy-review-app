@@ -1,0 +1,2 @@
+class TherapyGroupsController < ApplicationController
+end
