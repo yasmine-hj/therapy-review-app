@@ -5,7 +5,7 @@ class TherapyGroupsController < ApplicationController
 
     def new
         @therapy_group = TherapyGroup.new
-        @bourbon.build_therapy_specialty
+        @therapy_group.build.therapy_specialty
     end
 
     def create
@@ -13,7 +13,7 @@ class TherapyGroupsController < ApplicationController
         if therapy_group.save
             redirect_to therapy_group_path
         else
-            @therapy_group.build_therapy_specialty
+            @therapy_group.build.therapy_specialty
             render :new
         end
     end
