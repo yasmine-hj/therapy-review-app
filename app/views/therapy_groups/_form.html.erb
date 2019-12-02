@@ -1,0 +1,44 @@
+<%= render partial: 'layouts/errors', locals:{object: @therapy_group}%>
+
+<%= form_for(@therapy_group) do |f| %>
+<div>
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+</div>
+
+<div>
+    <%= f.label :location %>
+    <%= f.text_field :location%>
+</div>
+
+<div>
+    <%= f.label :duration %>
+    <%= f.text_field :duration %>
+</div>
+
+<div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+</div>
+
+
+
+
+<p>Please select the therapy group specialty:</p>
+<div>
+    <%= f.collection_select :therapy_specialty_id, TherapySpecialty.all, :id, :name, include_blank: "Pick one" %>
+</div>
+
+<p>or, create a new therapy_specialty!</p>
+<%= f.fields_for :therapy_specialty do |d| %>
+    <%= d.label :name %>
+    <%= d.text_field :name %>
+<div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+</div>
+<% end %>
+<br />
+<%= f.submit %>
+
+<% end %>
