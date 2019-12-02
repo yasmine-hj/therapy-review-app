@@ -5,15 +5,15 @@ class TherapyGroupsController < ApplicationController
 
     def new
         @therapy_group = TherapyGroup.new
-        @therapy_group.build.therapy_specialty
+        @therapy_group.build_therapy_specialty
     end
 
     def create
         @therapy_group = TherapyGroup.new(therapy_group_params)
         if therapy_group.save
-            redirect_to therapy_group_path
+            redirect_to therapy_groups_path
         else
-            @therapy_group.build.therapy_specialty
+            @therapy_group.build_therapy_specialty
             render :new
         end
     end
@@ -25,7 +25,7 @@ class TherapyGroupsController < ApplicationController
     private
 
     def therapy_group_params
-        params.require(:therapy_group).permit(:name, :description, :location, :duration, :therapy_specialty_id, therapy_specialty_attributes: [name])
+        params.require(:therapy_group).permit(:name, :description, :location, :duration, :therapy_specialty_id, therapy_specialty_attributes: [:name])
     end
 
 end
