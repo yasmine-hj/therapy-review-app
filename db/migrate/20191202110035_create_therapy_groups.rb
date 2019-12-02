@@ -5,7 +5,7 @@ class CreateTherapyGroups < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :location
       t.string :duration
-      t.belongs_to :therapy_specialty, null: false, foreign_key: true
+      t.belongs_to :therapy_specialty, foreign_key: true
 
       t.timestamps
     end
