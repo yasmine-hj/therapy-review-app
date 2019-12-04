@@ -10,12 +10,15 @@ class TherapyGroupsController < ApplicationController
 
     def create
         @therapy_group = TherapyGroup.new(therapy_group_params)
-        if therapy_group.save
+        if @therapy_group.save
             redirect_to therapy_groups_path
         else
             @therapy_group.build_therapy_specialty
             render :new
         end
+    end
+
+    def show
     end
 
     def ratings

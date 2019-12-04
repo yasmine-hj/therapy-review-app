@@ -9,9 +9,9 @@ class ReviewsController < ApplicationController
 
     def new
         if @therapy_group = TherapyGroup.find_by_id(params[:therapy_group_id])
-            @reviews = @therapy_group.reviews.build
+            @review = @therapy_group.reviews.build
         else
-            @reviews = Review.new
+            @review = Review.new
         end
     end
 
@@ -25,6 +25,7 @@ class ReviewsController < ApplicationController
     end
 
     def show
+        @therapy_group = TherapyGroup.find_by_id(params[:id])
         @review = Review.find_by_id(params[:id])
     end
 
