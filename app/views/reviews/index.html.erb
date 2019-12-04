@@ -7,6 +7,6 @@
 
 <% @reviews.each do |r| %>
     <h2> <%= r.therapy_group.name %></h2>
-    <h2> <%= r.title %> - <%= r.stars %> </h2>
+    <h3> <%= r.title %>  - <%= r.stars %>/5 stars   <%= render_stars(r.stars) %></h3>
     <p> <%= r.content %> </p>
 <% end %>

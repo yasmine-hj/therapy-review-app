@@ -15,4 +15,5 @@ class TherapyGroup < ApplicationRecord
     order(:name)
   end
 
+
 end
