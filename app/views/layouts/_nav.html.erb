@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 
 <html>
-
-            <head>
-                <style>
-                    ul#menu li {
-                    display:inline;
-                    color: #00001a;
-                    }
-                </style>
-            </head>
-
         <body>
         </br>
         <ul id="menu">
             <li><%= link_to "Home 🏠    ", root_path %></li> 
-
             <% if !user_signed_in? %>
-
                 <li><%= link_to "Login    ✅        ", new_user_session_path %> </li>
                 <li><%= link_to "Signup    🖌       ", new_user_registration_path %></li>
-
             <% else %>
                 <li><%= link_to "Add a new therapy group    💙       ", new_therapy_group_path %> </li>
                 <li><%= link_to "Add a new review    ⭐️         ", new_review_path %> </li>
@@ -32,6 +19,5 @@
         </ul>
         </body>
         </br>
-
 </html>
 

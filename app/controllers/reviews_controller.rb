@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
     def index
+
         if @therapy_group = TherapyGroup.find_by_id(params[:therapy_group_id])
             @reviews = @therapy_group.reviews.all
         else
