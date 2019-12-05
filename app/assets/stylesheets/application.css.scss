@@ -172,4 +172,14 @@
   // NAV
   #menu {
     display: flex;
+    justify-content: space-around;
+    margin: 10px 100px;
+  }
+
+  li {
+    // border: 1px solid black;
+    padding: 5px 5px 5px 5px;
+    border-radius: 15px;
+    background: rgba(238, 236, 237, 0.151);
+    text-decoration: none;
   }

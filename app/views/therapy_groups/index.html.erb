@@ -6,7 +6,8 @@
 <% @therapy_groups.each do |g| %>
     <h2> <%= g.name %> - <%= g.location %> - <%= g.duration %> mins   </h2>
     <p><%=g.description%></p>
-    <p><%= link_to "Add a new review    ⭐️   ", new_review_path(g) %> </p>
+    <p><%= link_to "Write a review for #{g.name}     ", new_therapy_group_review_path(g) %> or  <%= link_to "See reviews for #{g.name}", therapy_group_reviews_path(g) %></p>
     <p><%= link_to "Edit #{g.name}", edit_therapy_group_path(g) if g.users == current_user %></p>
+
 <% end %>
 </div>
