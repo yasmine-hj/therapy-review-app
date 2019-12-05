@@ -1,9 +1,11 @@
 <%= render partial: 'layouts/errors', locals:{object: @review}%>
+</br>
 <% if @therapy_group %>
     <h1> Add a review for <%=@therapy_group.therapy_specialty.name%> <%= @therapy_group.name %>!</h1>
 <% else %>
     <h1> Add a review! </h1>
 <% end %>
+</br>
 
 <%= form_for(@review) do |f| %>
 <% if params[:therapy_group_id] %>
