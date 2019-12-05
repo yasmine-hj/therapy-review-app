@@ -3,11 +3,15 @@
 <% if @therapy_group %>
     <h1> View all the reviews for  <%= @therapy_group.name %>!</h1>
 <% else %>
-    <h1> View all the reviews</h1>
+    <h1> All reviews</h1>
 <% end %>
 
+<div class=container3>
 <% @reviews.each do |r| %>
     <h2> <%= r.therapy_group.name %></h2>
     <h3> <%= r.title %>  - <%= r.stars %>/5 stars   <%= render_stars(r.stars) %></h3>
     <p> <%= r.content %> </p>
 <% end %>
+
+<h3> <%= link_to "Write a new review", new_review_path %></h3> 
+</div>

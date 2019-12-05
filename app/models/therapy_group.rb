@@ -9,11 +9,12 @@ class TherapyGroup < ApplicationRecord
   validates :location, presence: true
   validates :duration, presence: true
 
-  scope :grouped_ratings, -> {left_joins(:reviews).group(:id).order('avg(stars) asc')}
-  
+  scope :grouped_ratings, -> {left_joins(:reviews).group(:id).order('avg(stars) desc')}
+
   def self.alphabetical_order
     order(:name)
   end
+
 
 
 end

@@ -1,6 +1,6 @@
 class TherapyGroupsController < ApplicationController
     def index
-        @therapy_groups = TherapyGroup.all
+        @therapy_groups = TherapyGroup.grouped_ratings.includes(:therapy_specialty)
     end
 
     def new
@@ -19,6 +19,9 @@ class TherapyGroupsController < ApplicationController
     end
 
     def show
+    end
+
+    def edit
     end
 
     def ratings

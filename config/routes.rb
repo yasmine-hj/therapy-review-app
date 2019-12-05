@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :therapy_groups do
     resources :reviews, only: [:new, :index]
   end
-  devise_for :users, :controllers => {registrations: 'registrations'}
+  devise_for :users, :controllers => {registrations: 'registrations' }
+  
   root to: 'application#welcome'
+
 
 end

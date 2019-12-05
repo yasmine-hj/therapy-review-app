@@ -1,0 +1,14 @@
+<h1><%= @therapy_group.name%>  </h1>
+
+<h2> <%= @therapy_group.location %> - <%= @therapy_group.duration %> </h2>
+<div>
+<p><%= @therapy_group.description %></p>
+</div>
+
+<h3>Added by: <%= link_to @therapy_group.user, user_path(@user)%> </h3>
+
+<%= link_to "Edit #{@therapy_group.name}", edit_therapy_group_path(@therapy_group) if @therapy_group.user == current_user%>
+
+<br>
+
+<%= link_to "See this groups reviews", therapy_group_reviews_path(@therapy_group) %>

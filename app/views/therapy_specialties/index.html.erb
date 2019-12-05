@@ -1,0 +1,7 @@
+<h1>All therapy specialties</h1>
+
+<ol>
+  <% @therapy_specialties.each do |s| %>
+    <li><%= s.name%></li> - <li><%= s.description%></li>
+  <% end %>
+</ol>
