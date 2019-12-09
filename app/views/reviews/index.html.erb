@@ -12,6 +12,7 @@
     <h3> <%= r.title %>  - <%= r.stars %>/5 stars   <%= render_stars(r.stars) %></h3>
     <p> <%= r.content %> </p>
 <% end %>
+<h3><%= link_to "Edit #{@therapy_group.review}", edit_review_path(@review) if @review.user == current_user%> </h3> 
 
 <h3> <%= link_to "Write a new review", new_review_path %></h3> 
 </div>

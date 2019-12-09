@@ -7,6 +7,8 @@
             <li><%= link_to "Home 🏠    ", root_path %></li> 
             <% if !user_signed_in? %>
                 <li><%= link_to "Login    ✅        ", new_user_session_path %> </li>
+                <li><%= link_to "Log in with Facebook!", user_facebook_omniauth_authorize_path  %> </li>
+                <li><%= link_to "Sign in with Google!", user_google_oauth2_omniauth_authorize_path %> </li>
                 <li><%= link_to "Signup    🖌       ", new_user_registration_path %></li>
             <% else %>
                 <li><%= link_to "Add a new therapy group    💙       ", new_therapy_group_path %> </li>

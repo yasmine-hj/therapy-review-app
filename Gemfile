@@ -29,7 +29,12 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'autoprefixer-rails'
 gem 'rails_bootstrap_navbar'
-
+gem 'omniauth'
+gem 'omniauth-digitalocean'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
+gem 'thin'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
