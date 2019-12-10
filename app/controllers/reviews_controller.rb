@@ -30,6 +30,19 @@ class ReviewsController < ApplicationController
         @review = Review.find_by_id(params[:id])
     end
 
+    def edit 
+        @therapy_group = TherapyGroup.find_by_id(params[:id])
+        @review = Review.find_by_id(params[:id])
+    end
+
+    def update
+        @therapy_group = TherapyGroup.find_by(id: params[:id])
+        @review = Review.find_by_id(params[:id])
+        @review.update(review_params)
+        redirect_to review_path(@review)
+    end
+
+
   
     private
     def review_params

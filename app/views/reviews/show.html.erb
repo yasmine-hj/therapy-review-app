@@ -2,7 +2,7 @@
 <h1>Reviews: </h1>
 </br>
 
-<h2><%= @therapy_group.name%> - <%= @therapy_group.location%> - <%= @therapy_group.duration%> mins</h2>
 <h3><%= @review.title%></h3>
 <h3><%=@review.stars%> /5 stars    <%= render_stars(@review.stars) %> </h3>
 <p><%= @review.content %> </p>
+<h3><%= link_to "Edit review", edit_review_path(@review) if @review.user == current_user%> </h3> 

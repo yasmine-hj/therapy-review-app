@@ -5,8 +5,6 @@ class TherapyGroup < ApplicationRecord
   
   accepts_nested_attributes_for :therapy_specialty
   
-  validates :name, presence: true
-  validates :description, presence: true
   validates :location, presence: true
   validates :duration, presence: true
 

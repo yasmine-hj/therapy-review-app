@@ -24,6 +24,12 @@ class TherapyGroupsController < ApplicationController
     def edit
     end
 
+    def update
+        @therapy_group = TherapyGroup.find_by(id: params[:id])
+        @therapy_group.update(therapy_group_params)
+        redirect_to therapy_group_path(@therapy_group)
+    end
+
     def ratings
         @therapy_groups = TherapyGroup.grouped_ratings
     end
