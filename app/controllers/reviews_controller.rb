@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
     def index
-
         if @therapy_group = TherapyGroup.find_by_id(params[:therapy_group_id])
             @reviews = @therapy_group.reviews.all
         else
@@ -42,8 +41,6 @@ class ReviewsController < ApplicationController
         redirect_to review_path(@review)
     end
 
-
-  
     private
     def review_params
         params.require(:review).permit(:stars, :title, :content, :therapy_group_id)

@@ -22,19 +22,18 @@
     <%= f.text_area :description %>
 </div>
 
+
 <p>Please select the therapy group specialty:</p>
 <div>
     <%= f.collection_select :therapy_specialty_id, TherapySpecialty.all, :id, :name, include_blank: "Pick one" %>
 </div>
 
+<br>
 <p>or, create a new therapy specialty!</p>
-<%= f.fields_for :therapy_specialty do |d| %>
-    <%= d.label :name %>
-    <%= d.text_field :name %>
-<div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-</div>
+<%= f.fields_for :therapy_specialty do |s| %>
+    <%= s.label :name %>
+    <%= s.text_field :name %>
+
 <% end %>
 <br />
 <%= f.submit %>

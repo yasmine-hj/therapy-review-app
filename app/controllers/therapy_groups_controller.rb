@@ -19,13 +19,17 @@ class TherapyGroupsController < ApplicationController
     end
 
     def show
+        @therapy_group = TherapyGroup.find_by_id(params[:id])
+        @review = Review.find_by_id(params[:id])
     end
 
     def edit
+        @therapy_group = TherapyGroup.find_by_id(params[:id])
+        @review = Review.find_by_id(params[:id])
     end
 
     def update
-        @therapy_group = TherapyGroup.find_by(id: params[:id])
+        @therapy_group = TherapyGroup.find_by_id(params[:id])
         @therapy_group.update(therapy_group_params)
         redirect_to therapy_group_path(@therapy_group)
     end
