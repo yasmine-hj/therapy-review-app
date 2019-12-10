@@ -12,10 +12,6 @@ Visit localhost:3000 to start the webapp
 Contributing:
 Bug reports and pull requests are welcome on GitHub at https://github.com/yasmine-hj/therapy-review-app
 
-Authors:
-Yasmine Hajaji - Flatiron School
-
-
 License:
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
