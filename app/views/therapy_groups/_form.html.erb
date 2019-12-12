@@ -25,8 +25,9 @@
 
 <p>Please select the therapy group specialty:</p>
 <div>
-    <%= f.collection_select :therapy_specialty_id, TherapySpecialty.all, :id, :name, include_blank: "Pick one" %>
+    <%= f.collection_select :therapy_specialty_id, TherapySpecialty.all.where.not(name: [nil, '',]).uniq, :id, :name, include_blank: 'Select One' %>
 </div>
+
 
 <br>
 <p>or, create a new therapy specialty!</p>

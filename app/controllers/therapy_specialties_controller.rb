@@ -4,4 +4,6 @@ class TherapySpecialtiesController < ApplicationController
         @therapy_specialties = TherapySpecialty.alpha
     end
 
+  
+
 end

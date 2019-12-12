@@ -1,8 +1,15 @@
 </br>
-<h1>Reviews: </h1>
+<h1>Review for <%= @review.therapy_group.name%> : </h1>
 </br>
 
-<h3><%= @review.title%></h3>
+<h2><%= @review.title%></h2>
 <h3><%=@review.stars%> /5 stars    <%= render_stars(@review.stars) %> </h3>
 <p><%= @review.content %> </p>
+<br>
 <h3><%= link_to "Edit review", edit_review_path(@review) if @review.user == current_user%> </h3> 
+<br>
+<p><%= link_to "See all reviews", reviews_path %></p> 
+<p><%= link_to "See all reviews for #{@review.therapy_group.name}", therapy_group_reviews_path(@review.therapy_group) %></p> 
+<p><%= link_to "See all therapy groups", therapy_groups_path %></p> 
+
+

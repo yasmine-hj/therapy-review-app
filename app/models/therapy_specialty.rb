@@ -3,4 +3,6 @@ class TherapySpecialty < ApplicationRecord
 
     scope :alpha, -> {order(:name)}
 
+    
+    
 end

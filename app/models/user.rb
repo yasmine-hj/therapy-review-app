@@ -3,8 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
-  has_many :reviews
-  has_many :therapy_groups, through: :reviews
+  has_many :reviews,  :dependent => :destroy
+  has_many :therapy_groups, through: :reviews,  :dependent => :destroy
 
   validates :email, uniqueness: true
   validates :email, presence: true
