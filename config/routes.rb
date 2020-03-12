@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   root to: 'application#welcome'
   # get '/auth/facebook/callback' => 'sessions#create'
 
+  post '/reviews/by_rating' => 'reviews#search'
 
 end

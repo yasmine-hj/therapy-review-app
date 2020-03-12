@@ -1,4 +1,13 @@
   </br>
+
+  <%=form_tag ('/reviews/by_rating') do %>
+    <div>
+     <%= text_field_tag :stars %>
+     <%= submit_tag 'Search' %>
+    </div>
+  <% end%>
+
+
 <% if @therapy_group %>
     <h1>  All reviews for  <%= @therapy_group.name %>!</h1>
 <% else %>
@@ -14,6 +23,7 @@
     <p> <%= r.content %> </p>
     <p> <%= link_to "view review", review_path(r) %></p>
 <% end %>
+
 
 <h3> <%= link_to "Write a new review", new_review_path %></h3> 
 </div>

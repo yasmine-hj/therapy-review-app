@@ -41,6 +41,12 @@ class ReviewsController < ApplicationController
         redirect_to review_path(@review)
     end
 
+    def search
+        rating = params[:stars]
+        @reviews = Review.where("stars = #{rating}")
+        render :index
+    end
+
     private
     def review_params
         params.require(:review).permit(:stars, :title, :content, :therapy_group_id)
